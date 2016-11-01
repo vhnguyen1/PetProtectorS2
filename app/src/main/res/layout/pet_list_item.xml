@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:onClick="viewGameDetails"
+    android:onClick="viewPetDetails"
     android:clickable="true"
     android:id="@+id/petListLinearLayout">
 
@@ -12,7 +12,8 @@
         android:layout_height="75dp"
         android:layout_marginRight="12dp"
         android:layout_marginTop="4dp"
-        android:src="@mipmap/ic_launcher">
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/list_image_description">
     </ImageView>
 
     <LinearLayout
@@ -34,7 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/petListDetailsTextView"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

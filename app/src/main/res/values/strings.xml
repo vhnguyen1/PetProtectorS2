@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pet Protector</string>
+
+    <string name="my_pets">Pet Listing</string>
+    <string name="name">Name</string>
+    <string name="details">Pet Details</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="add_button_text">Add Pet</string>
+    <string name="enter">Enter Pet To Protect</string>
+    <string name="photo">photo of pet</string>
+    <string name="pet_name_text">Name</string>
+    <string name="pet_details_text">Pet Details</string>
+    <string name="pet_phone_text">Phone Number</string>
+    <string name="add_pet_image_description">Image of the pet to be added</string>
+    <string name="list_image_description">Image of a pet in the list</string>
+    <string name="details_image_description">Image of the selected pet</string>
+
+</resources>

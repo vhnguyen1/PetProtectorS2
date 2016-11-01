@@ -10,7 +10,9 @@ import android.net.Uri;
 import java.util.ArrayList;
 
 /**
- *
+ * Provides the necessary functions and tools to put information
+ * regarding pets inside an SQLite database while providing various
+ * different functions such as adding, upgrading and modifications.
  *
  * @author Vincent Nguyen
  */
@@ -34,8 +36,8 @@ class DBHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
-     * @param db
+     * Creates a new <code>Pet</code> database
+     * @param db The <code>Pet</code> database
      */
     @Override
     public void onCreate (SQLiteDatabase db){
@@ -49,10 +51,10 @@ class DBHelper extends SQLiteOpenHelper {
     }
 
     /**
-     *
-     * @param db
-     * @param oldVersion
-     * @param newVersion
+     * Upgrades the current <code>Pet</code> database when for newer versions
+     * @param db The <code>Pet</code> database
+     * @param oldVersion The previous database version number
+     * @param newVersion The new database version number
      */
     @Override
     public void onUpgrade(SQLiteDatabase db,

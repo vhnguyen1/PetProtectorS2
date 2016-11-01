@@ -2,10 +2,7 @@ package edu.orangecoastcollege.cs273.vnguyen629.petprotector;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.AssetManager;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,35 +56,21 @@ public class PetListAdapter extends ArrayAdapter<Pet> {
                 (LayoutInflater) this.mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(this.mResourceId, null);
 
-        final Pet pet = this.mPetsList.get(pos);
-        petListLinearLayout.setTag(pet);
-
         petListLinearLayout = (LinearLayout) view.findViewById(R.id.petListLinearLayout);
         petListNameTextView = (TextView) view.findViewById(R.id.petListNameTextView);
         petListDetailsTextView = (TextView) view.findViewById(R.id.petListDetailsTextView);
         petListImageView = (ImageView) view.findViewById(R.id.petListImageView);
 
+        final Pet pet = this.mPetsList.get(pos);
+        petListLinearLayout.setTag(pet);
+
         String petName = pet.getName();
         String petDetails = pet.getDetails();
+        Uri petImageUri = pet.getImageURI();
 
         petListNameTextView.setText(petName);
         petListDetailsTextView.setText(petDetails);
-
-        Uri petImageUri = pet.getImageURI();
-        if (petImageUri != null)
-            petListImageView.setImageURI(petImageUri);
-        else {
-            String defaultPetImageName = "none.png";
-            AssetManager am = this.mContext.getAssets();
-            try {
-                InputStream stream = am.open(defaultPetImageName);
-                Drawable event = Drawable.createFromStream(stream, petName);
-                petListImageView.setImageDrawable(event);
-            }
-            catch (IOException err) {
-                Log.e("Pet Protector", "Error Loading Image " + err.getMessage(), err);
-            }
-        }
+        petListImageView.setImageURI(petImageUri);
 
         return view;
     }
